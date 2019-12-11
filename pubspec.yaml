@@ -30,6 +30,7 @@ dependencies:
   circular_check_box: ^1.0.1
   flutter_spinkit: ^3.1.0
   shared_preferences: ^0.4.3
+  localstorage: ^3.0.0
 
 dev_dependencies:
   flutter_test:

@@ -17,11 +17,11 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context){
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(builder: (_)=>locater<UserViewModel>()),
-        ChangeNotifierProvider(builder: (_)=>locater<CountryViewModel>()),
-        ChangeNotifierProvider(builder: (_)=>locater<PartyViewModel>()),
-        ChangeNotifierProvider(builder: (_)=>locater<CandidateViewModel>()),
-        ChangeNotifierProvider(builder: (_)=>locater<VoteViewModel>()),
+        ChangeNotifierProvider(create: (_)=>locater<UserViewModel>()),
+        ChangeNotifierProvider(create: (_)=>locater<CountryViewModel>()),
+        ChangeNotifierProvider(create: (_)=>locater<PartyViewModel>()),
+        ChangeNotifierProvider(create: (_)=>locater<CandidateViewModel>()),
+        ChangeNotifierProvider(create: (_)=>locater<VoteViewModel>()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

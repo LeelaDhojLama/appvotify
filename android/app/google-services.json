@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:90934949758:android:a86d195d863b88450b652f",
+        "mobilesdk_app_id": "1:90934949758:android:fed2c236e9cd15c80b652f",
         "android_client_info": {
-          "package_name": "com.vote"
+          "package_name": "com.appyvote"
         }
       },
       "oauth_client": [
@@ -30,6 +30,13 @@
             {
               "client_id": "90934949758-8fn3itkl307t19qcriaoqthc9fad9cu9.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "90934949758-2bo1627jas43pha5llp2e0temqsk2la0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.appyvote"
+              }
             }
           ]
         }

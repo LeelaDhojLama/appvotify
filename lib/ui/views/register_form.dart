@@ -5,6 +5,7 @@ import '../../core/viewmodels/UserViewModel.dart';
 import 'package:vote/core/models/User.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:localstorage/localstorage.dart';
 class RegisterForm extends StatefulWidget {
   RegisterForm({Key key}) : super(key: key);
 
@@ -43,8 +44,11 @@ class _RegisterFormState extends State<RegisterForm> {
   addUserTolocalStorage(String id) async{
     SharedPreferences.setMockInitialValues({});
     final prefs = await SharedPreferences.getInstance();
-    print(id);
-    prefs.setString("user", id);
+    
+    await prefs.setString("user", id);
+    print(prefs.getString("user"));
+    final LocalStorage storage = new LocalStorage('vote');
+//    storage.setItem("user", id);
   }
 
     @override

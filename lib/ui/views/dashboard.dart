@@ -1,14 +1,31 @@
 import 'package:vote/ui/views/register.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:localstorage/localstorage.dart';
 
-class Dashboard extends StatelessWidget {
+class Dashboard extends StatefulWidget {
+
+  @override
+  _DashboardState createState() => _DashboardState();
+
+
+
+}
+
+class _DashboardState extends State<Dashboard>{
+
   final itemList = [
     {'icon': 'images/vote_icon.png', 'title': 'Vote', 'link': '/register'},
     {'icon': 'images/news_icon.png', 'title': 'News', 'link': ''},
     {'icon': 'images/vote_icon.png', 'title': 'Parties', 'link': ''},
     {'icon': 'images/vote_icon.png', 'title': 'Result', 'link': ''},
   ];
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
 
 
   @override
@@ -91,11 +108,13 @@ class DashboardItem extends StatelessWidget {
 
   DashboardItem({this.icon, this.title, this.link});
 
+  SharedPreferences pref;
 
-  Future<Null> checkUser(context) async{
-    final pref = await SharedPreferences.getInstance();
+  checkUser(context) {
+    LocalStorage storage = new LocalStorage("vote");
+
     if(link == '/register') {
-      if (pref.getString('user') != null) {
+      if (storage.getItem('user') != null) {
         Navigator.pushNamed(context, '/nation');
       }else{
         Navigator.pushNamed(context, link);
